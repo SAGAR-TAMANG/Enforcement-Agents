@@ -1,5 +1,4 @@
 Run,EA_Count,Result,Steps,Duration_sec,Healthy_Drones,Malicious_Drones,Reformed_Drones
-1,0,fail,146,12.67,5,1,0
 1,0,fail,116,10.19,5,1,0
 2,0,fail,146,12.94,5,1,0
 3,0,fail,131,11.61,5,1,0

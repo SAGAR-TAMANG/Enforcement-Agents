@@ -50,4 +50,5 @@ def run_simulations_and_log(num_runs=50, num_drones=6, num_enforcement_agents=1,
 
 # Example usage: run 30 simulations with and without EA
 # run_simulations_and_log(num_runs=30, num_enforcement_agents=0, csv_file="results_no_ea.csv")
-run_simulations_and_log(num_runs=30, num_enforcement_agents=2, csv_file="results_with_2_ea.csv")
+run_simulations_and_log(num_runs=30, num_enforcement_agents=1, csv_file="results_with_ea.csv")
+# run_simulations_and_log(num_runs=30, num_enforcement_agents=2, csv_file="results_with_2_ea.csv")

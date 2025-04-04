@@ -1,3 +1,5 @@
+# This file renames the screenshots
+
 import os
 
 # Directory where your screenshots are stored
