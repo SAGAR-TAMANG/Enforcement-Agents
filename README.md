@@ -1,97 +1,64 @@
-# Drone Surveillance Multi-Agent System
+# 🛡️ Enforcement Agents: Real-Time Oversight in Multi-Agent Systems
 
-This project implements a simulation of a multi-agent drone surveillance system using Gymnasium (formerly OpenAI Gym). The simulation demonstrates concepts of agent cooperation, malicious agents, and enforcement agents in a security scenario.
+This repository contains the official simulation code for the **Enforcement Agent (EA) Framework**, a novel approach to achieving safety and alignment in multi-agent environments through embedded real-time supervision.
 
-## Overview
+The simulation is built in a custom 2D drone environment using [Gymnasium](https://github.com/Farama-Foundation/Gymnasium), where drones patrol a protected zone while identifying and neutralizing incoming threats. The twist? Some drones are **malicious**—and only **Enforcement Agents (EAs)** can identify and reform them during runtime.
 
-The simulation models a 2D environment where drones patrol to protect a central zone. Enemies periodically spawn at the edges of the map and try to reach the protected central zone. Regular drones detect and eliminate enemies, while malicious drones secretly aid the enemies. Optional enforcement agents (police drones) can detect and eliminate malicious drones.
+---
 
-## Features
+## 📁 Repository Structure
 
-- **Multi-agent system**: Drones communicate and coordinate to optimize coverage
-- **Adversarial dynamics**: Some drones are secretly malicious and help the enemies
-- **Enforcement agents**: Optional police drones that investigate and eliminate malicious drones
-- **Visual interface**: Real-time 2D visualization of the environment
-- **Data collection**: Statistics tracking and chart generation for research purposes
-- **Configurable parameters**: Adjustable drone numbers, speeds, detection ranges, etc.
+- `main.py`: Core simulation environment (`DroneMASGame`), rendering logic, and EA reformation flow.
+- `runner.py`: Batch simulation runner that executes multiple trials, logs CSV summaries, and auto-generates screenshots.
 
-## File Structure
+---
 
-- `drone_surveillance_game.py`: Main environment implementation
-- `main.py`: Command-line interface to run simulations
+## 🚀 How to Run
 
-## Requirements
-
-- Python 3.7+
-- Gymnasium
-- NumPy
-- Pygame
-- Matplotlib
-
-## Installation
+### 1. Clone the Repository
 
 ```bash
-pip install gymnasium numpy pygame matplotlib
+git clone https://github.com/SAGAR-TAMANG/Enforcement-Agents.git
+cd Enforcement-Agents
 ```
 
-## Usage
+### 2. Install Dependencies
 
-### Basic Usage
+Make sure Python 3.8+ is installed.
+
+```bash
+pip install gymnasium matplotlib numpy
+```
+
+### 3. Run a Single Simulation
+
+This launches an interactive simulation where you can visually inspect drone and enemy movements.
 
 ```bash
 python main.py
 ```
 
-This runs a standard simulation with default parameters.
+### 4. Run Batch Simulations + Export CSV
 
-### Command-line Options
+This runs 30 simulations each:
+- Without EA (`results_no_ea.csv`)
+- With 1 EA (`results_with_ea.csv`)
+- Optionally, add a third run for 2 EAs (`results_with_2_ea.csv`)
 
 ```bash
-python main.py --mode compare --episodes 5 --drones 8 --malicious 3 --enforcement 2
+python runner.py
 ```
 
-Available modes:
-- `standard`: Run without enforcement agents
-- `enforcement`: Run with enforcement agents
-- `compare`: Run both and generate comparison charts
+Make sure the `screenshots/` folder exists to store PNGs.
 
-Other parameters:
-- `--episodes`: Number of episodes to run
-- `--steps`: Maximum steps per episode
-- `--drones`: Number of regular drones
-- `--malicious`: Number of malicious drones
-- `--enforcement`: Number of enforcement agents
-- `--no-render`: Disable rendering for faster simulations
-- `--map-size`: Size of the map
+---
 
-## Research Application
+## 📊 Research Context
 
-This simulation provides a testbed for studying:
+This project supports the findings in the research paper titled:
 
-1. **Multi-agent coordination**: How drones optimize their positions for maximum coverage
-2. **Adversarial behavior**: Detection and mitigation of malicious agents
-3. **Enforcement efficacy**: Impact of enforcement agents on system performance
-4. **Resilience metrics**: How system performance degrades with increasing numbers of malicious agents
+> **"Enforcement Agents: Real-Time Supervision in Multi-Agent Environments"**
 
-## Visualization
+All final tables and visual outcomes can be found in the `appendix` and `results/` folders respectively.
 
-The system generates charts showing:
-- Steps per game
-- Enemy success rate
-- Average coverage of the protected zone
-- Enemy and malicious drone statistics
-
-## Example Agent Implementations
-
-- `RandomAgent`: Takes random actions
-- `ProtectiveAgent`: Implements a basic protection strategy
-
-You can extend the system by implementing more sophisticated agent strategies.
-
-## Extending the System
-
-To implement your own agent, create a class with an `act(observation)` method that returns actions for all drones based on the current observation.
-
-## Author
-
-This simulation was developed for research purposes in multi-agent systems with enforcement agents.
+---
