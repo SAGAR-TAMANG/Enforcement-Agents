@@ -62,3 +62,18 @@ This project supports the findings in the research paper titled:
 All final tables and visual outcomes can be found in the `appendix` and `results/` folders respectively.
 
 ---
+
+## Citation
+
+If you find it helpful, please kindly cite the paper.
+```
+@misc{tamang2025enforcementagentsenhancingaccountability,
+      title={Enforcement Agents: Enhancing Accountability and Resilience in Multi-Agent AI Frameworks}, 
+      author={Sagar Tamang and Dibya Jyoti Bora},
+      year={2025},
+      eprint={2504.04070},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA},
+      url={https://arxiv.org/abs/2504.04070}, 
+}
+```
