@@ -1,6 +1,8 @@
 # 🛡️ Enforcement Agents: Real-Time Oversight in Multi-Agent Systems
 
-This repository contains the official simulation code for the **Enforcement Agent (EA) Framework**, a novel approach to achieving safety and alignment in multi-agent environments through embedded real-time supervision.
+![Workflow diagram](./screenshots/ea.png)
+
+This repository contains the official simulation code for the [**Enforcement Agent (EA) Framework**](https://arxiv.org/abs/2504.04070), a novel approach to achieving safety and alignment in multi-agent environments through embedded real-time supervision.
 
 The simulation is built in a custom 2D drone environment using [Gymnasium](https://github.com/Farama-Foundation/Gymnasium), where drones patrol a protected zone while identifying and neutralizing incoming threats. The twist? Some drones are **malicious**—and only **Enforcement Agents (EAs)** can identify and reform them during runtime.
 
